@@ -1,7 +1,6 @@
-// Game variables
 var canvas, ctx, car, obstacles, score;
 
-// Car object
+
 var Car = function(x, y, width, height, color) {
     this.x = x;
     this.y = y;
@@ -9,13 +8,13 @@ var Car = function(x, y, width, height, color) {
     this.height = height;
     this.color = color;
 
-    // Draw the car
+
     this.draw = function() {
         ctx.fillStyle = this.color;
         ctx.fillRect(this.x, this.y, this.width, this.height);
     }
 
-    // Move the car left or right
+
     this.move = function(direction) {
             if (direction === 'left') {
                 if (this.x > 0) {
@@ -30,7 +29,7 @@ var Car = function(x, y, width, height, color) {
     }
 };
 
-// Obstacle object
+
 var Obstacle = function(x, y, width, height, color, speed) {
     this.x = x;
     this.y = y;
@@ -39,19 +38,19 @@ var Obstacle = function(x, y, width, height, color, speed) {
     this.color = color;
     this.speed = speed;
 
-    // Draw the obstacle
+
     this.draw = function() {
         ctx.fillStyle = this.color;
         ctx.fillRect(this.x, this.y, this.width, this.height);
     }
 
-    // Move the obstacle down the screen
+
     this.move = function() {
         his.y += this.speed;
     }
 };
 
-// Initialize the game
+
 function init() {
   canvas = document.getElementById('canvas');
   ctx = canvas.getContext('2d');
